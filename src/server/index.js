@@ -3,6 +3,7 @@ const TeacherApi = require('../api/teacher')
 const ArticleApi = require('../api/article')
 const VideoApi = require('../api/video')
 const ExerciseApi = require('../api/exercise')
+const RegisterApi = require('../api/register')
 
 const bodyParser =  require('body-parser')
 const express = require('express')
@@ -29,6 +30,7 @@ app.use('/api/teacher',TeacherApi)
 app.use('/api/article',ArticleApi)
 app.use('/api/video',VideoApi)
 app.use('/api/exercise',ExerciseApi)
+app.use('/api/register',RegisterApi)
 
 var server = app.listen(8082, function () {
     var host = server.address().address

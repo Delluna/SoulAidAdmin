@@ -58,12 +58,12 @@
         </template>
       </el-menu-item>
 
-       <el-menu-item index="Admin" @click="selectMenu({name: 'Admin', title: '管理员信息'})">
+       <!-- <el-menu-item index="Admin" @click="selectMenu({name: 'Admin', title: '管理员信息'})">
         <template slot="title">
           <i class="el-icon-s-custom"></i>
           <span>管理员信息</span>
         </template>
-      </el-menu-item>
+      </el-menu-item> -->
 
        <el-menu-item index="Register" @click="selectMenu({name: 'Register', title: '注册申请'})">
         <template slot="title">

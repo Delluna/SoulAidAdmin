@@ -44,23 +44,17 @@
     },
     methods:{
       submitForm(formName) {
-        this.$router.push('/index')
-        // this.$refs[formName].validate((valid) => {
-        //   if (valid) {
-        //     this.$axios.post('/login?' + qs.stringify(this.loginForm)).then(res => {
-        //       console.log(res)
-        //       // const jwt=res.data
-        //       // this.$store.commit('SET_TOKEN',jwt)
-        //       this.$router.push('/index')
-        //     }).catch(error => {
-        //       console.log(error)
-        //       console.log('error submint!!');
-        //     })
-        //   } else {
-        //     console.log('error submint!!!');
-        //     return false;
-        //   }
-        // })
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            if(this.loginForm.username==="admin"&&this.loginForm.password==="admin"){
+              this.$router.push('/index')
+            }else{
+                this.$message({
+                  message:'用户名或密码错误'
+                })
+              }
+          }
+        })
       },
       resetForm(formName) {
         this.$refs[formName].resetFields();
